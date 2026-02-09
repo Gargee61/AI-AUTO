@@ -1,0 +1,69 @@
+:root {
+  --pivot-blue: #0047AB;
+  --pivot-blue-dark: #003380;
+  --pivot-blue-light: #4D88FF;
+  --pivot-blue-soft: rgba(0, 71, 171, 0.1);
+  --white: #ffffff;
+  --light-grey: #f8f9fa;
+  --charcoal: #2c3e50;
+  --soft-black: #1a1a1a;
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --shadow-soft: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+  --shadow-elevation: 0 10px 20px rgba(0, 0, 0, 0.03);
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e6eeff 100%);
+  color: var(--soft-black);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glass Card Base */
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(0, 71, 171, 0.12);
+  border-color: var(--pivot-blue-light);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pivot-blue-soft);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pivot-blue-light);
+}

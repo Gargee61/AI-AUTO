@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reality-OS | Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .projects-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            background: var(--white);
+            border: 1px solid var(--glass-border);
+            padding: 8px 16px;
+            border-radius: var(--radius-md);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--pivot-blue);
+            color: var(--white);
+            border-color: var(--pivot-blue);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .project-image {
+            height: 180px;
+            background: var(--pivot-blue-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .project-image i {
+            font-size: 4rem;
+            color: var(--pivot-blue-light);
+            opacity: 0.3;
+        }
+
+        .status-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: var(--shadow-elevation);
+        }
+
+        .project-details {
+            padding: 1.5rem;
+        }
+
+        .project-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-location {
+            font-size: 0.85rem;
+            color: var(--charcoal);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 1.2rem;
+        }
+
+        .project-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--charcoal);
+            margin-bottom: 2px;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="ph-bold ph-cube" style="color: white; font-size: 20px;"></i>
+                </div>
+                <span>Reality-OS</span>
+            </div>
+
+            <nav class="nav-links">
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="ph ph-squares-four"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="projects.html" class="nav-link active">
+                        <i class="ph ph-buildings"></i>
+                        <span>Projects</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="ph ph-users-three"></i>
+                        <span>Leads</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="ph ph-calendar-check"></i>
+                        <span>Site Visits</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="nav-links" style="margin-top: auto;">
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="ph ph-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="search-bar">
+                    <i class="ph ph-magnifying-glass"></i>
+                    <input type="text" placeholder="Search projects...">
+                </div>
+
+                <div class="header-actions">
+                    <button class="icon-btn">
+                        <i class="ph ph-bell"></i>
+                    </button>
+                    <div class="profile">
+                        <img src="https://ui-avatars.com/api/?name=Alex+Rodriguez&background=0047AB&color=fff"
+                            alt="Profile" class="profile-img">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Projects Content -->
+            <div style="padding: 2rem;">
+                <div class="projects-header">
+                    <div>
+                        <h1 style="font-size: 1.8rem; font-weight: 700;">Active Projects</h1>
+                        <p style="color: var(--charcoal); font-size: 0.9rem; margin-top: 5px;">Manage and monitor your
+                            construction sites.</p>
+                    </div>
+                    <div class="filter-group">
+                        <button class="filter-btn active">All Projects</button>
+                        <button class="filter-btn">Construction</button>
+                        <button class="filter-btn">Planning</button>
+                        <button class="filter-btn">Completed</button>
+                    </div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project Card 1 -->
+                    <div class="card project-card">
+                        <div class="project-image">
+                            <i class="ph ph-buildings"></i>
+                            <span class="status-tag" style="color: #4CAF50;">85% Done</span>
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-name">Skyline Towers</h3>
+                            <div class="project-location">
+                                <i class="ph ph-map-pin"></i>
+                                <span>Downtown Business District</span>
+                            </div>
+                            <div class="progress-container">
+                                <div
+                                    style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 5px;">
+                                    <span>Construction Progress</span>
+                                    <span style="font-weight: 600;">85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Units</span>
+                                    <span class="stat-value">240</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Available</span>
+                                    <span class="stat-value">36</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="card project-card">
+                        <div class="project-image">
+                            <i class="ph ph-tree"></i>
+                            <span class="status-tag" style="color: #ff9f4d;">42% Done</span>
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-name">Green Valley Estate</h3>
+                            <div class="project-location">
+                                <i class="ph ph-map-pin"></i>
+                                <span>Northwood Suburbs</span>
+                            </div>
+                            <div class="progress-container">
+                                <div
+                                    style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 5px;">
+                                    <span>Construction Progress</span>
+                                    <span style="font-weight: 600;">42%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 42%; background: var(--pivot-blue-light);">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Units</span>
+                                    <span class="stat-value">120</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Available</span>
+                                    <span class="stat-value">68</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="card project-card">
+                        <div class="project-image">
+                            <i class="ph ph-waves"></i>
+                            <span class="status-tag" style="color: #ff4d4d;">12% Done</span>
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-name">Oceanfront Villas</h3>
+                            <div class="project-location">
+                                <i class="ph ph-map-pin"></i>
+                                <span>Coastal Bay</span>
+                            </div>
+                            <div class="progress-container">
+                                <div
+                                    style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 5px;">
+                                    <span>Foundation Level</span>
+                                    <span style="font-weight: 600;">12%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 12%; background: #ff4d4d;"></div>
+                                </div>
+                            </div>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Units</span>
+                                    <span class="stat-value">45</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Available</span>
+                                    <span class="stat-value">40</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4 -->
+                    <div class="card project-card">
+                        <div class="project-image">
+                            <i class="ph ph-house-line"></i>
+                            <span class="status-tag" style="color: var(--charcoal);">Planning</span>
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-name">The Nexus Hub</h3>
+                            <div class="project-location">
+                                <i class="ph ph-map-pin"></i>
+                                <span>Tech Park South</span>
+                            </div>
+                            <div class="progress-container">
+                                <div
+                                    style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 5px;">
+                                    <span>Preparation</span>
+                                    <span style="font-weight: 600;">0%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%;"></div>
+                                </div>
+                            </div>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Units</span>
+                                    <span class="stat-value">80</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Status</span>
+                                    <span class="stat-value">Concept</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Background Decoration -->
+    <div class="bg-decoration shape-1" style="top: 20%; left: 80%;"></div>
+    <div class="bg-decoration shape-1"
+        style="top: 70%; left: 10%; transform: rotate(45deg); background: linear-gradient(135deg, white, transparent);">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

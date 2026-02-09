@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reality-OS | Builder Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="ph-bold ph-cube" style="color: white; font-size: 20px;"></i>
+                </div>
+                <span>Reality-OS</span>
+            </div>
+
+            <nav class="nav-links">
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link active">
+                        <i class="ph ph-squares-four"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="projects.html" class="nav-link">
+                        <i class="ph ph-buildings"></i>
+                        <span>Projects</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="ph ph-users-three"></i>
+                        <span>Leads</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="ph ph-calendar-check"></i>
+                        <span>Site Visits</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="ph ph-chart-line-up"></i>
+                        <span>Analytics</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="nav-links" style="margin-top: auto;">
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="ph ph-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="ph ph-sign-out"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="search-bar">
+                    <i class="ph ph-magnifying-glass"></i>
+                    <input type="text" placeholder="Search leads, projects, site visits...">
+                </div>
+
+                <div class="header-actions">
+                    <button class="icon-btn">
+                        <i class="ph ph-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+                    <button class="icon-btn">
+                        <i class="ph ph-chat-circle-dots"></i>
+                    </button>
+                    <div class="profile">
+                        <div style="text-align: right; margin-right: 10px;">
+                            <p style="font-weight: 600; font-size: 0.9rem;">Alex Rodriguez</p>
+                            <p style="font-size: 0.75rem; color: var(--charcoal);">Project Administrator</p>
+                        </div>
+                        <img src="https://ui-avatars.com/api/?name=Alex+Rodriguez&background=0047AB&color=fff"
+                            alt="Profile" class="profile-img">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-grid">
+                <!-- Overview Cards -->
+                <div class="card overview-card">
+                    <div class="card-icon"><i class="ph-bold ph-user-plus"></i></div>
+                    <div class="card-title">Total Leads</div>
+                    <div class="card-value">1,284</div>
+                    <div class="leads-summary">
+                        <span class="lead-tag tag-hot">120 Hot</span>
+                        <span class="lead-tag tag-warm">450 Warm</span>
+                    </div>
+                </div>
+
+                <div class="card overview-card">
+                    <div class="card-icon"><i class="ph-bold ph-lightning"></i></div>
+                    <div class="card-title">Active Projects</div>
+                    <div class="card-value">12</div>
+                    <div class="leads-summary">
+                        <span style="color: #4CAF50;">+2 this month</span>
+                    </div>
+                </div>
+
+                <div class="card overview-card">
+                    <div class="card-icon"><i class="ph-bold ph-calendar"></i></div>
+                    <div class="card-title">Site Visits Scheduled</div>
+                    <div class="card-value">48</div>
+                    <div class="leads-summary">
+                        <span style="color: var(--pivot-blue);">12 today</span>
+                    </div>
+                </div>
+
+                <div class="card overview-card">
+                    <div class="card-icon"><i class="ph-bold ph-currency-dollar"></i></div>
+                    <div class="card-title">Projected Revenue</div>
+                    <div class="card-value">$4.2M</div>
+                    <div class="leads-summary">
+                        <span style="color: #4CAF50;">15% growth</span>
+                    </div>
+                </div>
+
+                <!-- Leads Table -->
+                <div class="card section-leads">
+                    <div class="section-header">
+                        <h2 class="section-title">Recent Leads</h2>
+                        <button class="icon-btn"
+                            style="font-size: 0.9rem; font-weight: 600; color: var(--pivot-blue);">View All</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Lead Name</th>
+                                <th>Budget</th>
+                                <th>Status</th>
+                                <th>Assigned To</th>
+                                <th>Last Activity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: 500;">Johnathan Smith</td>
+                                <td>$450k - $600k</td>
+                                <td><span class="status-badge tag-hot">Hot</span></td>
+                                <td>Sarah Jenkins</td>
+                                <td>2 hours ago</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 500;">Elena Rodriguez</td>
+                                <td>$1.2M - $1.5M</td>
+                                <td><span class="status-badge tag-warm">Warm</span></td>
+                                <td>Michael Chen</td>
+                                <td>5 hours ago</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 500;">David Wilson</td>
+                                <td>$300k - $400k</td>
+                                <td><span class="status-badge tag-cold">Cold</span></td>
+                                <td>Sarah Jenkins</td>
+                                <td>Yesterday</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 500;">Marcus Vane</td>
+                                <td>$800k - $950k</td>
+                                <td><span class="status-badge tag-hot">Hot</span></td>
+                                <td>Michael Chen</td>
+                                <td>Yesterday</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Property Summary -->
+                <div class="card section-property">
+                    <h2 class="section-title">Property Summary</h2>
+                    <div class="progress-container" style="margin-top: 2rem;">
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 5px;">
+                            <span>Skyline Towers - Block A</span>
+                            <span style="font-weight: 700;">85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 5px;">
+                            <span>Green Valley Estate</span>
+                            <span style="font-weight: 700;">42%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 42%; background: var(--pivot-blue-light);"></div>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 5px;">
+                            <span>Oceanfront Villas</span>
+                            <span style="font-weight: 700;">12%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 12%; background: #ff9f4d;"></div>
+                        </div>
+                    </div>
+                    <div
+                        style="margin-top: 2rem; background: var(--pivot-blue-soft); padding: 1rem; border-radius: var(--radius-md);">
+                        <p style="font-size: 0.75rem; color: var(--pivot-blue); font-weight: 600;">Inventory Insight</p>
+                        <p style="font-size: 0.85rem; margin-top: 5px;">Total available units: 142</p>
+                    </div>
+                </div>
+
+                <!-- Upcoming Visits -->
+                <div class="card section-visits">
+                    <div class="section-header">
+                        <h2 class="section-title">Upcoming Site Visits</h2>
+                    </div>
+                    <div class="visit-list">
+                        <div class="visit-item">
+                            <div class="visit-date">
+                                <div class="date-day">08</div>
+                                <div class="date-month">Feb</div>
+                            </div>
+                            <div style="flex: 1;">
+                                <p style="font-weight: 600;">Robert Fox</p>
+                                <p style="font-size: 0.8rem; color: var(--charcoal);">Skyline Towers • 10:30 AM</p>
+                            </div>
+                            <i class="ph ph-caret-right" style="color: var(--pivot-blue-light);"></i>
+                        </div>
+                        <div class="visit-item">
+                            <div class="visit-date">
+                                <div class="date-day">08</div>
+                                <div class="date-month">Feb</div>
+                            </div>
+                            <div style="flex: 1;">
+                                <p style="font-weight: 600;">Emily Blunt</p>
+                                <p style="font-size: 0.8rem; color: var(--charcoal);">Green Valley • 2:00 PM</p>
+                            </div>
+                            <i class="ph ph-caret-right" style="color: var(--pivot-blue-light);"></i>
+                        </div>
+                        <div class="visit-item">
+                            <div class="visit-date">
+                                <div class="date-day">09</div>
+                                <div class="date-month">Feb</div>
+                            </div>
+                            <div style="flex: 1;">
+                                <p style="font-weight: 600;">Thomas Wright</p>
+                                <p style="font-size: 0.8rem; color: var(--charcoal);">Oceanfront Villas • 11:15 AM</p>
+                            </div>
+                            <i class="ph ph-caret-right" style="color: var(--pivot-blue-light);"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications Panel -->
+                <div class="card section-notifications">
+                    <div class="section-header">
+                        <h2 class="section-title">Alerts & Notifications</h2>
+                        <i class="ph ph-dots-three-outline" style="cursor: pointer;"></i>
+                    </div>
+                    <div class="visit-list">
+                        <div class="visit-item"
+                            style="border-left: 4px solid #ff4d4d; border-radius: 4px 12px 12px 4px;">
+                            <div class="card-icon" style="background: rgba(255, 77, 77, 0.1); color: #ff4d4d;">
+                                <i class="ph ph-warning-circle"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <p style="font-weight: 600;">Hot lead needs follow-up</p>
+                                <p style="font-size: 0.8rem; color: var(--charcoal);">Marcus Vane hasn't been contacted
+                                    in 24h.</p>
+                            </div>
+                        </div>
+                        <div class="visit-item"
+                            style="border-left: 4px solid var(--pivot-blue); border-radius: 4px 12px 12px 4px;">
+                            <div class="card-icon">
+                                <i class="ph ph-check-circle"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <p style="font-weight: 600;">Site visit scheduled</p>
+                                <p style="font-size: 0.8rem; color: var(--charcoal);">Robert Fox confirmed for Feb 08,
+                                    10:30 AM.</p>
+                            </div>
+                        </div>
+                        <div class="visit-item"
+                            style="border-left: 4px solid #4CAF50; border-radius: 4px 12px 12px 4px;">
+                            <div class="card-icon" style="background: rgba(76, 175, 80, 0.1); color: #4CAF50;">
+                                <i class="ph ph-currency-circle-dollar"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <p style="font-weight: 600;">Payment Received</p>
+                                <p style="font-size: 0.8rem; color: var(--charcoal);">Token amount received from Skyline
+                                    Towers Unit 402.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Background Decoration -->
+    <div class="bg-decoration shape-1" style="top: 20%; left: 80%;"></div>
+    <div class="bg-decoration shape-1"
+        style="top: 70%; left: 10%; transform: rotate(45deg); background: linear-gradient(135deg, white, transparent);">
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
